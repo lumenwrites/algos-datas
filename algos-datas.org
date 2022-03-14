@@ -1,0 +1,158 @@
+* Big O
+System for classifying the speed of the code, have a vocabulary to talk about peformance, discusing tradeoffs between different approaches, identifying inefficient parts of the code.
+
+You can't measure performance in time, because different machines will run at different speed. So you do it in the number of operations.
+And really you only do the exponent, because more precidse doesnt matter.
+Speed relatiev to the input.
+Counting operations(multiplication, addition, devision).
+what we care abotu is how number of operations grows proportionally with N.
+relationship between input size and the number of operations
+
+linear (n)
+constant(1)
+quadratic(n2) - nested loops
+
+constants don't matter, just ignore them.
+take into account only the largest exopnent.
+
+accessing array elements is constant.
+in a loop it's the complexity of the loop times whatever's inside the loop.
+
+there's also O(n log n)
+O(n)
+O(log n) is smaller.
+
+# Logs
+logarithm - inverse of exponentiation. like multiplication/division.
+log_2(8) = 3
+two to what power equals 8.
+2^3=8
+2^exponent = value
+log_2(value) = exponent
+most common ones are log 2, log 10, and log e.
+we don't really care which one.
+
+log by itself isnt a math operation on it's own,  we just ignore/omit the 2 because it doesnt matter, we just care about the loosey goosey big picture.
+
+>> The logarithm of a number roughly measures the number of times you can divide it by 2 before you get a value that's less than or equal to 2.
+
+logn is a great time. because n is the number you're reaching by raising 2 to some power. so it reaches it quickly.
+
+O(n log n) is slower than O(n), O(log n) is faster.
+
+good searching/sorting/recursion algos have algorithmic time complexity.
+
+# Space complexity
+Same notation as big o.
+space required by the algorithm only, not counting the space taken up by the inputs.
+
+booleans/numbers are constant space (no matter how large number is)
+strings and arrays require o(n) space. number of keys for objects.
+* General JS O() basics
+
+Objects are real quick.
+Searching through values is o(n), the rest is o(1)
+.keys() (list of keys) is O(n), because you gotta visit each part 1 by 1 and add it ot the  array.
+
+arrays are used when you need order.
+access is o(1), the rest depends.
+
+inserting at the end is fast.
+inserting at the beginning has to shift all the elements, so it's o(n)
+push and pop is always faster than shift and unshift.
+
+slice/splice is the same
+sort is O(n*logN)
+foreach/map/reduce is O(n)
+
+* Algorithms and Problem Solving Patterns
+a process or set of steps to accomplish a certain task.
+1. devise a plan for solving problems.
+2. master common problem solving patterns.
+
+
+- Understand the problem
+  Restate the problem in your own words.
+  What are the inputs that go into the problem? Outputs?
+  How does the solution look like?
+  Can outputs be determined from the inputs?
+  How should I label the important pieces of data that go into this problem?
+- Explore concrete examples
+  Sanity checks. Examples to check your work.
+  User stories, unit tests.
+  Write down 2-3 eamples. simple>complex, edge cases, invalid inputs.
+- Break it down
+  Tell the interviewer the steps you'd try to take. Talk to them.
+  Write comments. comment-first development.
+  formulate steps, explain the approach.
+  show them my thinking process.
+- Simplify it
+  ignore part that's giving you a hard time and focus on everything else.
+  if you get stuck, but know a place to start - just do that.
+  what is the core difficulty in what I'm trying to do, what's tripping me up?
+  Temporary ignore it and solve everythign around it.
+  write a simplified solution.
+  then encorporate that difficulty back in. 
+- Solve
+- Look back and refactor.
+  Can you check the result?
+  Solve it differently?
+  Make it easier to understand?
+  Improve performance?
+  Other ways to refactor? Extract it into a method?
+  How have others solved it?
+  styleguide, make it neat.
+
+# Problem solving patterns.
+
+Frequency counters.
+Use objets or sets to collect values/frequencies of values.
+use them to avoid nested loops and (O^n) with arrays/strings.
+compare pieces of data, like anagrams.
+return true if every value in the array has the corresponding value squared in the second array.
+
+# Search
+# Linear seacrch
+Just check one element at a time.
+indexOf, includes, etc. works like this.
+Loop through array, return true or index.
+O(n)
+
+# Binary Search
+Works on sorted arrays.
+Check if it's after or before the middle element, eliminate the wrong part.
+It's O(log n), see, because it's 2's power.
+Every time you're doubling the size of n, you're adding one extra step.
+
+* Sorting
+# Javascript Sort
+accepts a comparator function
+it takes pairs of elements, and determinest their order based on the return value.
+if you return negative, a should come before b.
+if it's positive, then a should come after b.
+if it returns 0, theyre the same.
+
+# Bubble sort
+swap values bigger for smaller
+
+# Selection sort
+instead of first placing larger values into sorted position it first places the smaller ones.
+loop through the array, find the smallest element and swap it with the first one.
+on the second loop, you start with the second element (you know that the first one is already sorted)
+it's better because you only need to do one swap per loop. so you dont have to shift a huge array.
+
+# Insertion Sort
+gradually build up the sorted portion of the array.
+feels the most intuitive. put it into the right place.
+put it between a smaller and the larger number.
+compare to each one in order.
+
+* Data Structures
+Collections of values, relationships among them, functions/operations that can be applied to data
+.
+
+* Dynamic Programming
+Dynamic programming - break down a problem into a set of simpler subproblems, solve each of them just once, and store their solutions.
+problem solving pattern where you use cache.
+overlapping subproblems - break into small pieces, which are reusable. fibonacci.
+optimal substrcuture
