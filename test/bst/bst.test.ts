@@ -1,7 +1,6 @@
-function sum(a:number, b:number) {
-  return a + b;
-}
+import { BST } from '../../src/bst/bst'
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
+test('testing basics', () => {
+  let tree = new BST()
+  expect(tree.name()).toBe('Hi!')
 });
