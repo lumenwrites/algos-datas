@@ -58,16 +58,12 @@ export class SinglyLinkedList<T> {
     this.length -= 1
     return current
   }
-  traverse() {
-    // Loop through the nodes as long as there's a pointer to the next one
-    let current = this.head
-    while (current) {
-      console.log(current.val)
-      current = current.next
-    }
-  }
 }
 
 let newList = new SinglyLinkedList<string>()
-console.log(newList.push("a"))
-console.log(newList.push("b"))
+newList.push("a")
+newList.push("b")
+newList.push("c")
+console.log(newList)
+console.log(newList.pop())
+console.log(newList)
